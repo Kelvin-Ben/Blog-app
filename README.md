@@ -63,7 +63,7 @@
 
 - **[Use migration files]**
 - **[Build a schema]**
-- **[]**
+- **[Foreign keys should be included]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,25 +114,13 @@ To run the project, execute the following command:
 
 To run tests, run the following command:
 
-<!--
+
 Example command:
 
 ```sh
   bin/rails test test/models/article_test.rb
 ```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
+-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
