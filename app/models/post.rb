@@ -10,6 +10,10 @@ class Post < ApplicationRecord
   def update_comments_counter
     self.update(comments_count: self.comments.count)
   end
+
+  def update_likes_counter
+    self.update(likes_count: self.likes.count)
+  end
 end
 
 # first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
