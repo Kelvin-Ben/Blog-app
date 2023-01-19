@@ -13,10 +13,9 @@ end
 # seventh_post = Post.create(author: first_user, title: 'The reading is Great', text: 'I enjoyed the article')
 # eighth_post = Post.create(author: second_user, title: 'How cool is it?', text: 'One of amzing reading in my life!')
 
-
-        # Comment.create(post: third_post, author: first_user, text: 'Hi Tom!')
-        # Comment.create(post: third_post, author: first_user,  text: 'Hello Ken')
-        # Comment.create(post: third_post, author: second_user, text: 'How are you?')
-        # Comment.create(post: third_post, author: first_user,  text: 'Which article to read again?')
-        # Comment.create(post: third_post, author: second_user, text: 'I am happy for you')
-        # Comment.create(post: third_post, author: first_user,  text: 'Nice to third_post
+# Comment.create(post: third_post, author: first_user, text: 'Hi Tom!')
+# Comment.create(post: third_post, author: first_user,  text: 'Hello Ken')
+# Comment.create(post: third_post, author: second_user, text: 'How are you?')
+# Comment.create(post: third_post, author: first_user,  text: 'Which article to read again?')
+# Comment.create(post: third_post, author: second_user, text: 'I am happy for you')
+# Comment.create(post: third_post, author: first_user,  text: 'Nice to third_post
