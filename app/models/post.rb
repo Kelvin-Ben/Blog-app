@@ -2,6 +2,14 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: :author_id
   has_many :likes
   has_many :comments, foreign_key: :post_id
+
+  def recent_comments
+    comments.order(created_at: :desc).limit(5)
+  end
+
+  # def increment_comments_counter
+  # increment!(:comments_counter)
+  # end
 end
 
 # first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
