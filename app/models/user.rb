@@ -7,7 +7,7 @@ class User < ApplicationRecord
     posts.order(created_at: :desc).limit(3)
   end
 
-  def increment_posts_counter
-    increment!(:posts_count)
+  def update_posts_counter
+    self.update(posts_count: self.posts.count)
   end
 end
