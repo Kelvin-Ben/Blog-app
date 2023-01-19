@@ -7,9 +7,9 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(5)
   end
 
-  # def increment_comments_counter
-  # increment!(:comments_counter)
-  # end
+  def update_comments_counter
+    self.update(comments_count: self.comments.count)
+  end
 end
 
 # first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
