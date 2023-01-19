@@ -8,11 +8,11 @@ class Post < ApplicationRecord
   end
 
   def update_comments_counter
-    self.update(comments_count: self.comments.count)
+    update(comments_count: comments.count)
   end
 
   def update_likes_counter
-    self.update(likes_count: self.likes.count)
+    update(likes_count: likes.count)
   end
 end
 
