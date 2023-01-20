@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_many :likes
   has_many :comments, foreign_key: :post_id
 
-  validates_presence_of :title, message: "Title cannot be Blank!"
+  validates :title, presence: true
   validates :title, length: { maximum: 250, too_long: "Name must not exceed 250 characters"}
   validates_numericality_of :comments_count, greater_than_or_equal_to: 0, message: 
     "Comments counter must be an integer greater than or eaqual to zero"
