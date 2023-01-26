@@ -1,1 +1,31 @@
-<h1>Welcome to the users page</h1>
+<h1>User details</h1>
+
+<section>
+    <div>
+      <img src='<%= @users.photo %>' alt= '<%= @users.name %> photo' />
+      <h1><%= @users.name %> </h1>
+      <p> Number of posts: <% @users.posts_counter %> </p>
+    </div>
+
+    <div>
+      <h4>Bio</h4>
+      <p> <%= @users.bio %> </p>
+    </div>
+    <div>
+      <% @users.recent_posts.each do |post| %>
+        <div>
+          <h5><%= link_to post.title, user_post_path(@users, post) %> </h5>
+          <p> <%= post.text %> </p>
+          <span>
+            Comments: <%= post.comments_counter || 0 %>
+            Likes: <% post.likes_counter || 0 %>
+            </span>
+        </div
+      <%end%>
+    </div>
+    <div>
+      <button>
+          <%= link_to 'see all posts', user_post_path(@users) %>
+      </button>
+    </div>
+</section>

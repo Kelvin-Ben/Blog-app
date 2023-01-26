@@ -1,1 +1,18 @@
-<h1> Welcome to the home page </h1>
+<h1>List of users</h1>
+<section>
+  <div>
+    <% @users.each do |user| %>
+      <div>
+        <img src='<%= user.photo %>' alt = '<%= user.name %> photo' />
+      </div>
+      <div>
+        <h1>
+          <%= link_to user.name, user_path(user) %>
+        </h1>
+        <p>
+        Number of posts: <%= user.posts_counter %>
+        </p>
+      </div>
+      <%end%>
+  </div>
+</section>
