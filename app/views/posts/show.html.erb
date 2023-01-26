@@ -1,21 +1,21 @@
 <h1> Users Post Details </h1>
 <section>
   <div>
-    <h3> <%= @post.title %> by <% @post.author_id %> </h3>
+    <h3> <%= @post.title %> by <%= @post.author.name %> </h3>
     <span>
       Comments: <%= @post.comments_counter || 0 %>
       Likes: <%= @post.likes_counter || 0 %>
     </span>
-    <span>
+    <p>
       <%= @post.text %>
-    </span>
+    </p>
     <div>
       <ul>
         <% if @post.recent_comments.length == 0 %>
           <p> No Comments</p>
           <% else %>
           <% @post.recent_comments.each do |comment| %>
-            <li><%= comment.author %>: <%= comment.text %></li>
+            <li><%= comment.author.name %>: <%= comment.text %></li>
             <% end %>
           <% end %>
       </ul>
