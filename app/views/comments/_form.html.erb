@@ -1,0 +1,11 @@
+<%= form_with model: Comment, url: user_post_comments_path(@user, @post) do |f| %>
+  <section>
+    <div>
+      <span><%= f.label "Add Comment" %></span>
+      <span><%= form.text_area :text, placeholder: "Add Comment", row: 25, required: true %></span>
+    </div>
+    <div>
+      <%= f.submit "Create Comment" %>
+    </div>
+    </section>
+<% end %>
