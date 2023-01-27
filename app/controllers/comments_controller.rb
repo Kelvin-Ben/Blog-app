@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to user_post_path(@user, @post)
     else
-      render 'post/show'
+      render 'posts/show'
     end
   end
 
