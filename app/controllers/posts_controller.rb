@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author = current_user
+    
     if @post.save
       flash[:notice] = 'Post saved successfully'
       redirect_to user_posts_path(current_user)
@@ -27,6 +28,6 @@ class PostsController < ApplicationController
     private
 # private method which will be used to filter the parameters that are passed to the create method.
     def post_params
-      params.required(:post).permit(:title, :text)
+      params.require(:post).permit(:title, :text)
     end
 end
