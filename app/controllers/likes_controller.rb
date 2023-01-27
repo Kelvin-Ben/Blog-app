@@ -4,7 +4,7 @@ class LikesController < ApplicationController
     @like.post_id = params[:post_id]
 
     if @like.save
-      flash[:success] = "Liked"
+      flash[:success] = 'Liked'
       redirect_to user_post_path(current_user, @like.post)
     else
       render create

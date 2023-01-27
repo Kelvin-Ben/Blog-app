@@ -10,7 +10,6 @@ class Post < ApplicationRecord
   validates_numericality_of :likes_counter, greater_than_or_equal_to: 0, message:
     'Likes counter must be an integer greater than or equal to zero'
 
-    
   def recent_comments
     comments.order(created_at: :desc).limit(5)
   end

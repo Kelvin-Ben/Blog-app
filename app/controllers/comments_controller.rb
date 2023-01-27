@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     @comment.post_id = params[:post_id]
 
     if @comment.save
-      flash[:success] = "Comment created"
+      flash[:success] = 'Comment created'
       redirect_to user_post_path(current_user, @comment.post)
     else
       render :create
