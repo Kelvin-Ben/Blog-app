@@ -1,8 +1,7 @@
-<%= form_with model: Comment, url: user_post_comments_path(@user, @post) do |f| %>
+<%= form_with model: Comment, url: user_post_comments_path(@post.author, @post) do |f| %>
   <section>
     <div>
-      <span><%= f.label "Add Comment" %></span>
-      <span><%= form.text_area :text, placeholder: "Add Comment", row: 25, required: true %></span>
+      <%= f.text_area :text, placeholder: "Add Comment", row: 25, required: true %>
     </div>
     <div>
       <%= f.submit "Create Comment" %>
