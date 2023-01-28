@@ -7,14 +7,13 @@ class LikesController < ApplicationController
 
     if @like.save
       redirect_to user_post_path(@like.post), notice: 'Like created'
-    elsif
-      redirect_to user_post_path(@like.post), notice: 'Error creating like'
     else
       render :create
     end
   end
 
   private
+
   def like_params
     params.require(:like).permit(:post_id)
   end
