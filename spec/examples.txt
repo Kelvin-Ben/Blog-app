@@ -1,5 +1,12 @@
 example_id                                   | status | run_time        |
 -------------------------------------------- | ------ | --------------- |
-./spec/integration/user_index_spec.rb[1:1:1] | passed | 0.58312 seconds |
-./spec/integration/user_index_spec.rb[1:1:2] | passed | 0.71906 seconds |
-./spec/integration/user_index_spec.rb[1:1:3] | failed | 2.19 seconds    |
+./spec/integration/user_index_spec.rb[1:1:1] | passed | 0.63031 seconds |
+./spec/integration/user_index_spec.rb[1:1:2] | passed | 0.59725 seconds |
+./spec/integration/user_show_spec.rb[1:1]    | passed | 0.43584 seconds |
+./spec/integration/user_show_spec.rb[1:2]    | passed | 0.36209 seconds |
+./spec/integration/user_show_spec.rb[1:3]    | failed | 2.46 seconds    |
+./spec/integration/user_show_spec.rb[1:4]    | passed | 0.35588 seconds |
+./spec/integration/user_show_spec.rb[1:5]    | failed | 2.46 seconds    |
+./spec/integration/user_show_spec.rb[1:6]    | failed | 2.44 seconds    |
+./spec/integration/user_show_spec.rb[1:7]    | failed | 4.34 seconds    |
+./spec/integration/user_show_spec.rb[1:8]    | failed | 2.43 seconds    |
