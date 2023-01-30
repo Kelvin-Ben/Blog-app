@@ -9,15 +9,14 @@ RSpec.describe 'User show view', type: :system do
     @post3 = Post.create(title: 'post3', text: 'text3', author_id: @tom.id)
     @post4 = Post.create(title: 'post4', text: 'text4', author_id: @tom.id)
     @post5 = Post.create(title: 'post5', text: 'text5', author_id: @lilly.id)
+    visit user_path(@tom.id)
   end
 
   it 'shows the profile picture of the user' do
-    visit user_path(@tom.id)
     expect(page).to have_css("img[src='https://unsplash.com/photos/F_-0BxGuVvo']")
   end
 
   it 'shows the user\'s name' do
-    visit user_path(@tom.id)
     expect(page).to have_content('tom')
   end
 
@@ -27,12 +26,10 @@ RSpec.describe 'User show view', type: :system do
   end
 
   it 'displays user bio' do
-    visit user_path(@tom.id)
     expect(page).to have_content('Teacher from Mexico')
   end
 
   it 'displays first 3 posts' do
-    visit user_path(@tom.id)
     expect(page).to have_content('post1')
     expect(page).to have_content('post2')
     expect(page).to have_content('post3')
@@ -40,18 +37,15 @@ RSpec.describe 'User show view', type: :system do
   end
 
   it 'has a button to show all posts' do
-    visit user_path(@tom.id)
     expect(page).to have_content('See all posts')
   end
 
   it 'redirects to specific post page' do
-    visit user_path(@tom.id)
     click_link 'post1'
     expect(page).to have_current_path(user_post_path(@tom, @post2))
   end
 
   it 'redirects to user post index page' do
-    visit user_path(@tom.id)
     click_link 'See all posts'
     expect(page).to have_current_path(user_posts_path(@tom))
   end
