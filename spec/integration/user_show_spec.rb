@@ -21,7 +21,6 @@ RSpec.describe 'User show view', type: :system do
   end
 
   it 'displays the number of posts for the user' do
-    visit user_path(@tom.id)
     expect(page).to have_content('Number of posts: 4')
   end
 
