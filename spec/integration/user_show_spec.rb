@@ -9,10 +9,6 @@ RSpec.describe 'User show view', type: :system do
     @post3 = Post.create(title: 'post3', text: 'text3', author_id: @tom.id)
     @post4 = Post.create(title: 'post4', text: 'text4', author_id: @tom.id)
     @post5 = Post.create(title: 'post5', text: 'text5', author_id: @lilly.id)
-    @post1.save
-    @post2.save
-    @post3.save
-    @post4.save
   end
 
   it 'shows the profile picture of the user' do
