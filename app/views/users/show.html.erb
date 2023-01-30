@@ -18,7 +18,7 @@
           <p> <%= post.text %> </p>
           <span>
             Comments: <%= post.comments_counter || 0 %>
-            Likes: <% post.likes_counter || 0 %>
+            Likes: <%= post.likes_counter || 0 %>
             </span>
         </div>
       <%end%>
