@@ -15,7 +15,7 @@
         <% if @post.recent_comments.length == 0 %>
           <p> No Comments</p>
           <% else %>
-          <% @post.recent_comments.each do |comment| %>
+          <% @post.recent_comments.includes(:author).each do |comment| %>
             <li><%= comment.author.name %>: <%= comment.text %></li>
             <% end %>
           <% end %>
