@@ -26,12 +26,12 @@ RSpec.describe 'User show view', type: :system do
     expect(page).to have_content('Number of posts: 4')
   end
 
-  it 'displays the user\'s bio' do
+  it 'displays user bio' do
     visit user_path(@tom)
     expect(page).to have_content('Teacher from Mexico')
   end
 
-  it 'displays the user\'s first 3 posts' do
+  it 'displays first 3 posts' do
     visit user_path(@tom)
     expect(page).to have_content('post1')
     expect(page).to have_content('post2')
@@ -44,13 +44,13 @@ RSpec.describe 'User show view', type: :system do
     expect(page).to have_content('See all posts')
   end
 
-  it 'redirects to a specific post\'s show page' do
+  it 'redirects to specific post page' do
     visit user_path(@tom)
     click_link 'post1'
     expect(page).to have_current_path(user_post_path(@tom, @post2))
   end
 
-  it 'redirects to user\'s post\'s index page' do
+  it 'redirects to user post index page' do
     visit user_path(@tom)
     click_link 'See all posts'
     expect(page).to have_current_path(user_posts_path(@tom))
