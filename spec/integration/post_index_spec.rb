@@ -43,11 +43,11 @@ RSpec.describe 'Post index view', type: :system do
 
   it 'displays the last 5 comments' do
     visit user_posts_path(@tom)
-    expect(page).to have_content('Lilly: comment2')
-    expect(page).to have_content('Lilly: comment3')
-    expect(page).to have_content('Lilly: comment4')
-    expect(page).to have_content('Lilly: comment5')
-    expect(page).to have_content('Lilly: comment6')
+    expect(page).to have_content('Lilly : comment2')
+    expect(page).to have_content('Lilly : comment3')
+    expect(page).to have_content('Lilly : comment4')
+    expect(page).to have_content('Lilly : comment5')
+    expect(page).to have_content('Lilly : comment6')
   end
 
   it 'displays the number of comments a post has' do
