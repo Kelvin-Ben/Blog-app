@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Home page', type: :system do
-  before :each do
+  before :all do
     @thomas = User.create(name: 'Thomas', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
     @lilly = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BHHuVvo', bio: 'Teacher from Poland')
     @post1 = Post.create(title: 'post1', text: 'text1', author_id: @thomas.id)
@@ -10,7 +10,6 @@ RSpec.describe 'Home page', type: :system do
     @post4 = Post.create(title: 'post4', text: 'text2', author_id: @thomas.id)
     @post5 = Post.create(title: 'post5', text: 'text3', author_id: @lilly.id)
   end
-  describe 'index page' do
     it 'shows the right username' do
       visit root_path
       expect(page).to have_content('Thomas')
@@ -32,5 +31,4 @@ RSpec.describe 'Home page', type: :system do
       click_link('Thomas')
       expect(page).to have_current_path(user_path(@thomas.id))
     end
-  end
 end
