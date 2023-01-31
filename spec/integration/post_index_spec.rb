@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Post index view', type: :system do
-  before :each do
+  before :all do
     @tom = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico')
     @lilly = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BGVvo', bio: 'Teacher from Poland')
     @post1 = Post.create(title: 'post1', text: 'text1', author_id: @tom.id)
