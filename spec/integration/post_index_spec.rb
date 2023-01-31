@@ -60,6 +60,11 @@ RSpec.describe 'Post index view', type: :system do
     expect(page).to have_content('Likes: 0')
   end
 
+  it 'displays a section of pagination' do
+    visit user_posts_path(@tom)
+    expect(page).to have_selector('.pagination')
+  end
+
   it 'redirects to the show page of a specific post' do
     visit user_posts_path(@tom)
     click_link('post1')
