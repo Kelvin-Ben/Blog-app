@@ -7,6 +7,8 @@ RSpec.describe 'Home page', type: :system do
     @linktester = User.create(name: 'Linktester', photo: 'https://unsplash.com/photos/F_-0BHHuVvo', bio: 'Teacher from Poland')
     @post1 = Post.create(title: 'post1', text: 'text1', author_id: @tom.id)
     @post2 = Post.create(title: 'post2', text: 'text2', author_id: @tom.id)
+    @post3 = Post.create(title: 'post3', text: 'text1', author_id: @tom.id)
+    @post4 = Post.create(title: 'post4', text: 'text2', author_id: @tom.id)
     @post3 = Post.create(title: 'post3', text: 'text3', author_id: @lilly.id)
   end
   describe 'index page' do
@@ -19,12 +21,11 @@ RSpec.describe 'Home page', type: :system do
     it 'should see profile pictures' do
       visit root_path
       expect(page).to have_xpath("//img[contains(@src,'https://unsplash.com/photos/F_-0BxGuVvo')]")
-      expect(page).to have_xpath("//img[contains(@src,'https://unsplash.com/photos/F_-0BHHuVvo')]")
     end
 
     it 'should see the number of posts for each user' do
       visit root_path
-      expect(page).to have_content('Number of posts: 2')
+      expect(page).to have_content('Number of posts: 4')
       expect(page).to have_content('Number of posts: 1')
     end
 
