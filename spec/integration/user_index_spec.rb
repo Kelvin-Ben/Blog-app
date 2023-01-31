@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Home page', type: :system do
-  before :all do
+  before :each do
     @thomas = User.create(name: 'Thomas', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
     @lilly = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BHHuVvo', bio: 'Teacher from Poland')
     @post1 = Post.create(title: 'post1', text: 'text1', author_id: @thomas.id)
