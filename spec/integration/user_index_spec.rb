@@ -14,7 +14,7 @@ RSpec.describe 'Home page', type: :system do
 
     it 'shows the right username' do
       visit root_path
-      expect(page).to have_content('Tom')
+      expect(page).to have_content('Thomas')
       expect(page).to have_content('Lilly')
     end
 
