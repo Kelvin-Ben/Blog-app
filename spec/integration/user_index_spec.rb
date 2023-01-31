@@ -4,6 +4,7 @@ RSpec.describe 'Home page', type: :system do
   before :all do
     @thomas = User.create(name: 'Thomas', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
     @lilly = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BHHuVvo', bio: 'Teacher from Poland')
+    @linktester = User.create(name: 'Linktester', photo: 'https://unsplash.com/photos/F_-0BHHuVvo', bio: 'Teacher from Poland')
     @post1 = Post.create(title: 'post1', text: 'text1', author_id: @thomas.id)
     @post2 = Post.create(title: 'post2', text: 'text2', author_id: @thomas.id)
     @post3 = Post.create(title: 'post3', text: 'text1', author_id: @thomas.id)
@@ -29,7 +30,7 @@ RSpec.describe 'Home page', type: :system do
 
     it 'redirects to user show page' do
       visit root_path
-      click_link('lilly')
-      expect(page).to have_current_path(user_path(@thomas.id))
+      click_link('Linktester')
+      expect(page).to have_current_path(user_path(@linktester.id))
     end
 end
