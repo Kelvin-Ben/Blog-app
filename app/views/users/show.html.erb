@@ -4,7 +4,7 @@
     <div>
       <img src='<%= @users.photo %>' alt= '<%= @users.name %> photo' />
       <h1><%= @users.name %> </h1>
-      <p> Number of posts: <% @users.posts_counter %> </p>
+      <p> Number of posts: <%= @users.posts_counter %> </p>
     </div>
 
     <div>
@@ -18,14 +18,18 @@
           <p> <%= post.text %> </p>
           <span>
             Comments: <%= post.comments_counter || 0 %>
-            Likes: <% post.likes_counter || 0 %>
+            Likes: <%= post.likes_counter || 0 %>
             </span>
-        </div
+        </div>
       <%end%>
     </div>
     <div>
       <button>
-          <%= link_to 'see all posts', user_post_path(@users) %>
+          <%= link_to 'see all posts', user_posts_path(@users) %>
+      </button>
+
+      <button>
+          <%= link_to 'create posts', new_user_post_path(@users) %>
       </button>
     </div>
 </section>

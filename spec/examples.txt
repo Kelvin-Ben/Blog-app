@@ -1,0 +1,30 @@
+example_id                                  | status | run_time        |
+------------------------------------------- | ------ | --------------- |
+./spec/integration/post_index_spec.rb[1:1]  | passed | 0.39742 seconds |
+./spec/integration/post_index_spec.rb[1:2]  | passed | 0.4332 seconds  |
+./spec/integration/post_index_spec.rb[1:3]  | passed | 0.42173 seconds |
+./spec/integration/post_index_spec.rb[1:4]  | passed | 0.43641 seconds |
+./spec/integration/post_index_spec.rb[1:5]  | passed | 0.43906 seconds |
+./spec/integration/post_index_spec.rb[1:6]  | passed | 0.53301 seconds |
+./spec/integration/post_index_spec.rb[1:7]  | passed | 0.44078 seconds |
+./spec/integration/post_index_spec.rb[1:8]  | passed | 0.4545 seconds  |
+./spec/integration/post_index_spec.rb[1:9]  | failed | 2.51 seconds    |
+./spec/integration/post_index_spec.rb[1:10] | failed | 3.6 seconds     |
+./spec/integration/post_show_spec.rb[1:1]   | passed | 0.32598 seconds |
+./spec/integration/post_show_spec.rb[1:2]   | passed | 0.34619 seconds |
+./spec/integration/post_show_spec.rb[1:3]   | passed | 2.05 seconds    |
+./spec/integration/post_show_spec.rb[1:4]   | passed | 0.35963 seconds |
+./spec/integration/post_show_spec.rb[1:5]   | passed | 0.34752 seconds |
+./spec/integration/post_show_spec.rb[1:6]   | passed | 0.49031 seconds |
+./spec/integration/user_index_spec.rb[1:1]  | passed | 0.38947 seconds |
+./spec/integration/user_index_spec.rb[1:2]  | passed | 0.32507 seconds |
+./spec/integration/user_index_spec.rb[1:3]  | passed | 0.56367 seconds |
+./spec/integration/user_index_spec.rb[1:4]  | passed | 1.72 seconds    |
+./spec/integration/user_show_spec.rb[1:1]   | passed | 0.52777 seconds |
+./spec/integration/user_show_spec.rb[1:2]   | passed | 0.85807 seconds |
+./spec/integration/user_show_spec.rb[1:3]   | passed | 0.85252 seconds |
+./spec/integration/user_show_spec.rb[1:4]   | passed | 0.45515 seconds |
+./spec/integration/user_show_spec.rb[1:5]   | passed | 0.56773 seconds |
+./spec/integration/user_show_spec.rb[1:6]   | passed | 0.45425 seconds |
+./spec/integration/user_show_spec.rb[1:7]   | passed | 0.51213 seconds |
+./spec/integration/user_show_spec.rb[1:8]   | passed | 0.44719 seconds |

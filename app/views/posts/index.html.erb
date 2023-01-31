@@ -1,15 +1,15 @@
 <h1> List of Users Posts </h1>
 
 <section>
-      <div>
-        <img src='<%= @users.photo %>' alt= '<%= @users.name %> photo' />
-      </div>
-      <span>
-        <%= @users.name %>
-        <p>Number of posts: <%= @users.posts_counter %> </p>
-      </span>
-      <div>
-        <%= @users.posts.each do |post| %>
+<div>
+<img src='<%= @users.photo %>' alt= '<%= @users.name %> photo' />
+</div>
+<span>
+<%= @users.name %>
+<p>Number of posts: <%= @users.posts_counter %> </p>
+</span>
+<div>
+<%= @users.posts.each do |post| %>
         <span>
         <h5><%= link_to post.title, user_post_path(@users, post) %></h5>
         <p> <%= post.text %> </p>
@@ -28,8 +28,7 @@
                 <% end %>
               <% end %>
           </ul>
-
-        </div
+        </div>
         <% end %>
       </div>
 </section>
