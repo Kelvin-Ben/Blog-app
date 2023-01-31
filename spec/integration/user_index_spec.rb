@@ -10,9 +10,10 @@ RSpec.describe 'Home page', type: :system do
     @post4 = Post.create(title: 'post4', text: 'text2', author_id: @thomas.id)
     @post5 = Post.create(title: 'post5', text: 'text3', author_id: @lilly.id)
   end
+
     it 'shows the right username' do
       visit root_path
-      expect(page).to have_content('Thomas')
+      expect(page).to have_content('Tom')
       expect(page).to have_content('Lilly')
     end
 
@@ -28,7 +29,7 @@ RSpec.describe 'Home page', type: :system do
 
     it 'redirects to user show page' do
       visit root_path
-      click_link('Thomas')
+      click_link('lilly')
       expect(page).to have_current_path(user_path(@thomas.id))
     end
 end
