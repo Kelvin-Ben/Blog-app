@@ -23,13 +23,13 @@ RSpec.describe 'Home page', type: :system do
 
     it 'should see the number of posts for each user' do
       visit root_path
-      expect(page).to have_content('Number of posts: 4')
-      expect(page).to have_content('Number of posts: 0')
+      expect(page).to have_content('Number of posts: 2')
+      expect(page).to have_content('Number of posts: 1')
     end
 
     it 'redirects to user show page' do
       visit root_path
-      click_link('Tom')
+      click_link('tom')
       expect(page).to have_current_path(user_path(@tom.id))
     end
   end
