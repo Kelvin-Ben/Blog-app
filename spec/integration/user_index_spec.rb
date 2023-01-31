@@ -12,25 +12,25 @@ RSpec.describe 'Home page', type: :system do
     @post5 = Post.create(title: 'post5', text: 'text3', author_id: @lilly.id)
   end
 
-    it 'shows the right username' do
-      visit users_path
-      expect(page).to have_content('Thomas')
-      expect(page).to have_content('Lilly')
-    end
+  it 'shows the right username' do
+    visit users_path
+    expect(page).to have_content('Thomas')
+    expect(page).to have_content('Lilly')
+  end
 
-    it 'should see profile pictures' do
-      visit users_path
-      expect(page).to have_css("img[src='https://unsplash.com/photos/F_-0BxGuVvo']")
-    end
+  it 'should see profile pictures' do
+    visit users_path
+    expect(page).to have_css("img[src='https://unsplash.com/photos/F_-0BxGuVvo']")
+  end
 
-    it 'should see the number of posts for each user' do
-      visit users_path
-      expect(page).to have_content('Number of posts: 0')
-    end
+  it 'should see the number of posts for each user' do
+    visit users_path
+    expect(page).to have_content('Number of posts: 0')
+  end
 
-    it 'redirects to user show page' do
-      visit users_path
-      click_link('Linktester')
-      expect(page).to have_current_path(user_path(@linktester.id))
-    end
+  it 'redirects to user show page' do
+    visit users_path
+    click_link('Linktester')
+    expect(page).to have_current_path(user_path(@linktester.id))
+  end
 end
