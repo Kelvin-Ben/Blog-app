@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User show view', type: :system do
+RSpec.describe 'Post index view', type: :system do
   before :all do
     @tom = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico')
     @lilly = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BGVvo', bio: 'Teacher from Poland')
@@ -9,12 +9,12 @@ RSpec.describe 'User show view', type: :system do
     @post3 = Post.create(title: 'post3', text: 'text3', author_id: @tom.id)
     @post4 = Post.create(title: 'post4', text: 'text4', author_id: @tom.id)
     @post5 = Post.create(title: 'post5', text: 'text5', author_id: @lilly.id)
-    @comment1 = Comment.create(text: 'comment1', author_id: @lilly.id, post_id: @tom.id)
-    @comment2 = Comment.create(text: 'comment2', author_id: @lilly.id, post_id: @tom.id)
-    @comment3 = Comment.create(text: 'comment3', author_id: @lilly.id, post_id: @tom.id)
-    @comment4 = Comment.create(text: 'comment4', author_id: @lilly.id, post_id: @tom.id)
-    @comment5 = Comment.create(text: 'comment5', author_id: @lilly.id, post_id: @tom.id)
-    @comment6 = Comment.create(text: 'comment6', author_id: @lilly.id, post_id: @tom.id)
+    @comment1 = Comment.create(text: 'comment1', author_id: @lilly.id, post_id: @post1.id)
+    @comment2 = Comment.create(text: 'comment2', author_id: @lilly.id, post_id: @post1.id)
+    @comment3 = Comment.create(text: 'comment3', author_id: @lilly.id, post_id: @post1.id)
+    @comment4 = Comment.create(text: 'comment4', author_id: @lilly.id, post_id: @post1.id)
+    @comment5 = Comment.create(text: 'comment5', author_id: @lilly.id, post_id: @post1.id)
+    @comment6 = Comment.create(text: 'comment6', author_id: @lilly.id, post_id: @post1.id)
   end
   it 'shows the profile picture of the user' do
     visit user_posts_path(@tom)
