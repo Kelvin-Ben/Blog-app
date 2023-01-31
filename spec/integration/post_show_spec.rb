@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Post show page', type: :system do
   before :all do
-    @tom = User.create(name: 'Tom', photo: 'https://images.com/image1.jpg', bio: 'bio1')
-    @lilly = User.create(name: 'Lilly', photo: 'https://images.com/image2.jpg', bio: 'bio2')
+    @tom = User.create(name: 'Tom', photo: '#', bio: 'bio1')
+    @lilly = User.create(name: 'Lilly', photo: '#', bio: 'bio2')
     @post1 = Post.create(title: 'post1', text: 'text1', author_id: @tom.id)
     @comment1 = Comment.create(text: 'comment1', author_id: @lilly.id, post_id: @post1.id)
     @comment2 = Comment.create(text: 'comment2', author_id: @lilly.id, post_id: @post1.id)
