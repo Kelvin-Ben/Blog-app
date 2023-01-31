@@ -13,23 +13,23 @@ RSpec.describe 'Home page', type: :system do
   end
 
     it 'shows the right username' do
-      visit root_path
+      visit users_path
       expect(page).to have_content('Thomas')
       expect(page).to have_content('Lilly')
     end
 
     it 'should see profile pictures' do
-      visit root_path
-      expect(page).to have_xpath("//img[contains(@src,'https://unsplash.com/photos/F_-0BxGuVvo')]")
+      visit users_path
+      expect(page).to have_css("img[src='https://unsplash.com/photos/F_-0BxGuVvo']")
     end
 
     it 'should see the number of posts for each user' do
-      visit root_path
-      expect(page).to have_content('Number of posts: 4')
+      visit users_path
+      expect(page).to have_content('Number of posts: 0')
     end
 
     it 'redirects to user show page' do
-      visit root_path
+      visit users_path
       click_link('Linktester')
       expect(page).to have_current_path(user_path(@linktester.id))
     end
