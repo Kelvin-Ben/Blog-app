@@ -35,7 +35,7 @@ RSpec.describe 'Post show page', type: :system do
   end
 
   it 'displays the post\'s body' do
-    visit user_posts_path(@tom)
+    visit user_post_path(@tom)
     expect(page).to have_content('text1')
   end
 
