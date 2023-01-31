@@ -21,11 +21,16 @@ RSpec.describe 'Home page', type: :system do
       expect(page).to have_xpath("//img[contains(@src,'https://unsplash.com/photos/F_-0BHHuVvo')]")
     end
 
-    # it 'should see the number of posts for each user' do
-    #   visit root_path
-    #   users.each do |user|
-    #   expect(page).to have_con(user.posts.count)
-    #   end
-    # end
+    it 'should see the number of posts for each user' do
+      visit root_path
+      expect(page).to have_content('Number of posts: 4')
+      expect(page).to have_content('Number of posts: 0')
+    end
+
+    it 'redirects to user show page' do
+      visit root_path
+      click_link('Tom')
+      expect(page).to have_current_path(user_path(@tom.id))
+    end
   end
 end
