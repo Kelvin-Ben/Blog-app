@@ -11,10 +11,9 @@
       <%= @post.text %>
     </p>
     <div>
-        <% if @comments.length == 0 %>
-          <p> No comments yet.</p>
+        <% if @comments || 0 %>
           <% else %>
-            <% @comments.each do |comment| %>
+            <% @comments.includes(:author).each do |comment| %>
               <div>
                 <p><%= comment.author.name %>: <%= comment.text %></p>
               </div>

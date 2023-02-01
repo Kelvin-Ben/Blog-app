@@ -2,19 +2,19 @@
 
 <section>
     <div>
-      <img src='<%= @users.photo %>' alt= '<%= @users.name %> photo' />
-      <h1><%= @users.name %> </h1>
-      <p> Number of posts: <%= @users.posts_counter %> </p>
+      <img src='<%= @user.photo %>' alt= '<%= @user.name %> photo' />
+      <h1><%= @user.name %> </h1>
+      <p> Number of posts: <%= @user.posts_counter %> </p>
     </div>
 
     <div>
       <h4>Bio</h4>
-      <p> <%= @users.bio %> </p>
+      <p> <%= @user.bio %> </p>
     </div>
     <div>
-      <% @users.recent_posts.each do |post| %>
+      <% @user.recent_posts.each do |post| %>
         <div>
-          <h5><%= link_to post.title, user_post_path(@users, post) %> </h5>
+          <h5><%= link_to post.title, user_post_path(@user, post) %> </h5>
           <p> <%= post.text %> </p>
           <span>
             Comments: <%= post.comments_counter || 0 %>
@@ -25,11 +25,11 @@
     </div>
     <div>
       <button>
-          <%= link_to 'see all posts', user_posts_path(@users) %>
+          <%= link_to 'see all posts', user_posts_path(@user) %>
       </button>
 
       <button>
-          <%= link_to 'create posts', new_user_post_path(@users) %>
+          <%= link_to 'create posts', new_user_post_path(@user) %>
       </button>
     </div>
 </section>
