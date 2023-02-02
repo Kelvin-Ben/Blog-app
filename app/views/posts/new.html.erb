@@ -1,5 +1,14 @@
-<div>
-  <h3>Create a new Post</h3> 
-  <%= render 'posts/form' %>
+<section class="container">
+
+    <p class="post-title">Create a new Post:</p>
+    <%= form_with model: Post, url: user_posts_url, class: "form" do |f|  %>
+   <%= f.text_field :title, placeholder:"Title", id:"post_title", autofocus: true %>
   
-</div>
+  <div>
+   <%= f.text_area :text, placeholder:"Write your content...", id:"post_text"%>
+  </div>
+  <div id="buttons_div">
+   <%= f.submit "Save your post" %>
+  </div>
+<% end %>
+</section>

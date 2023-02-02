@@ -1,27 +1,20 @@
-<h1> Users Post Details </h1>
 <section>
-  <div>
-    <h3> <%= @post.title %> by <%= @post.author.name %> </h3>
-    <p><%= @post.text %></p>
-    <span>
-      Comments: <%= @post.comments_counter || 0 %>
-      Likes: <%= @post.likes_counter || 0 %>
-    </span>
-    <p>
-      <%= @post.text %>
-    </p>
-    <div>
-        <% if @comments.length == 0 %>
-          <p> No comments yet.</p>
-          <% else %>
-            <% @comments.each do |comment| %>
-              <div>
-                <p><%= comment.author.name %>: <%= comment.text %></p>
-              </div>
-            <% end %>
-          <% end %>
-        <%= render 'comments/form' %>
-        <%= render 'likes/like' %>
+    <div class = 'listed-posts'>
+        <h4><%= @post.title%> by <%= @post.author.name%></h4>
+        <p><%= @post.text  %></p>
+        <span class = 'comment-likes'>
+            Comments: <%= @post.comments_counter || 0 %>
+            <%= render 'comments/form' %>
+            Likes: <%= @post.likes_counter || 0 %>
+            <%= render 'likes/like' %>            
     </div>
-  </div>
+    <ul class = 'comments-info'>
+        <% if @post.comments.length == 0 %>
+            <p>No comments yet</p>
+        <% else %>
+            <% @post.comments.each do |comment| %>
+                <li><%= comment.author.name %> : <%= comment.text %></li>
+            <%end%>
+        <%end%>
+    </ul>
 </section>

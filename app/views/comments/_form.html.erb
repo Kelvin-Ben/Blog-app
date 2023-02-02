@@ -1,10 +1,9 @@
-<%= form_with model: Comment, url: user_post_comments_path(@post.author, @post) do |f| %>
-  <section>
+<%= form_with model: Comment, url: user_post_comments_path(@post.author, @post) do |form| %>
     <div>
-      <%= f.text_area :text, placeholder: "Add Comment", row: 25, required: true %>
+        <%= form.label 'Add Comment' %> <br/><br/>
+        <%= form.text_area :text, placeholder: 'Add Comment', row: 20, required: true %> <br/>
     </div>
     <div>
-      <%= f.submit "Create Comment" %>
+        <%= form.submit 'Add Comment' %>
     </div>
-    </section>
-<% end %>
+<%end%>
