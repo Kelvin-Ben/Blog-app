@@ -1,18 +1,15 @@
-<h1>List of users</h1>
 <section>
-  <div>
-    <% @users.each do |user| %>
-      <div>
-        <img src='<%= user.photo %>' alt = '<%= user.name %> photo' />
-      </div>
-      <div>
-        <h1>
-          <%= link_to user.name, user_path(user) %>
-        </h1>
-        <p>
-        Number of posts: <%= user.posts_counter %>
-        </p>
-      </div>
-      <%end%>
-  </div>
+    <ul class = 'user-style-home'>
+        <% @users.each do |user| %>
+            <li>
+                <div class = 'users-photo'>
+                    <img src='<%= user.photo %>' alt = '<%= user.name %> photo' />
+                </div>
+                <div class = 'user-detail'>
+                    <h2><%= link_to user.name, user_path(user) %></h2>
+                    <p>Number of posts: <%= user.posts_counter %></p>
+                </div>
+            </li>
+        <%end%>
+    </ul>
 </section>
